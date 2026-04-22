@@ -9,7 +9,7 @@ class Books(Base):
     created_at = Column(TIMESTAMP(timezone=True), nullable=False, server_default=text("now()"))
 
     __tablename__ = "books"
-    id = Column(Integer, primary_key=True, nullable=False)
+    id = Column(Integer, primary_key=True)
     title = Column(String, nullable=False)
     author = Column(String, nullable=False)
     summary = Column(String, nullable=False)

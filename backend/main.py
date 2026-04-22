@@ -11,6 +11,11 @@ from .utils import models
 
 from .routers import books
 
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
