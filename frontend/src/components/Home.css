@@ -1,0 +1,21 @@
+img {
+    width: calc((100vw - 200px) / 10);
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Creates 5 equal-width columns */
+  grid-template-rows: repeat(3, auto);   /* Creates 3 rows (height adjusts to content) */
+  gap: 10px;   
+  
+  list-style-type: none; /* Removes the bullets */
+  padding: 0;           /* Removes default indentation */
+  margin: 0;            /* Adds optional spacing between items */
+}
+
+li {
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center;     /* Vertical centering */
+  text-align: center;      /* Centers inline text */
+}
