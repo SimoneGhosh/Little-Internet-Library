@@ -1,5 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import './Book.css'
 
 const bookData = [
     {
@@ -140,17 +142,29 @@ const bookData = [
     ];
 
 const Book = () => {
+    const { bookId } = useParams();
+    const navigate = useNavigate();
+    const book = bookData.find(b => b.id === parseInt(bookId));
 
     return (
         <main className="Book">
-            {console.log(book)}
-            <h2>Author</h2>
-            <h2>Summary</h2>
+            {console.log(bookId)}
+            <div className="book-details">
+                <h1>{book?.title}</h1>
+                <h2>Author</h2>
+                <p>{book?.author}</p>
+                <h2>Summary</h2>
+                <p>{book?.summary}</p>
             <h2>Notes</h2>
-            <Button onClick={() => console.log("Swap button clicked")}>
+            <p>{book?.notes}</p>
+            <button onClick={() => navigate(`/swap/${book.id}`)}>
                 Swap
-            </Button>
-            <p><img src="https://assets.hardcover.app/edition/2555790/1b6964d60d0875611a8b0f3d0da728b1729d0516.jpeg"/></p>
+            </button>
+            </div>
+
+            <div className="book-image">
+                <img src={book?.image} alt={book?.title} />
+            </div>
         </main>
     )
 }

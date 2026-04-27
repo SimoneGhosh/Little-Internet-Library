@@ -1,0 +1,95 @@
+/* Base page styling */
+body {
+  margin: 0;
+  font-family: "Helvetica", Arial, sans-serif;
+  color: #1f1f1f;
+}
+
+/* Layout container */
+.Book {
+  max-width: 80%;
+  margin:  auto;
+
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 80px;
+  align-items: start;
+}
+
+/* LEFT SIDE (text content) */
+.book-details h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 0.8;
+  letter-spacing: -5px;
+}
+
+/* Section headers */
+.book-details h2 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: 25px;
+  margin-bottom: 6px;
+}
+
+/* Paragraphs */
+.book-details p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 10px 0;
+  max-width: 100%;
+}
+
+/* Button */
+.book-details button {
+  margin-top: 30px;
+  padding: 12px 28px;
+
+  background-color: #f2c94c;
+  border: 2px solid #000;
+  border-radius: 999px;
+
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.book-details button:hover {
+  background-color: #e0b93f;
+  transform: translateY(-2px);
+}
+
+/* RIGHT SIDE (image) */
+.book-image {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.book-image img {
+  width: 100%;
+  object-fit: contain;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .Book {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .book-details h1 {
+    font-size: 48px;
+  }
+
+  .book-image {
+    justify-content: center;
+  }
+
+  .book-image img {
+    max-width: 260px;
+  }
+}

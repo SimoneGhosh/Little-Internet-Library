@@ -22,7 +22,7 @@ function App() {
           <Route path='/' element={<Layout />}>
             {/* public routes */}
             <Route path='/' element={<Home />} />
-            <Route path='/Books/:bookId' element={<Book />} />
+            <Route path='/books/:bookId' element={<Book />} />
             <Route path='/swap/:bookId' element={<Swap />} />
 
             {/* catch all */}

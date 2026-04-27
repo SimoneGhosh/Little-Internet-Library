@@ -1,8 +1,17 @@
-img {
-    width: calc((100vw - 200px) / 10);
+.container {
+  position: relative;
+  text-align: center;
 }
 
-ul {
+img {
+  height: calc(100vh - 30px); /* Sets the image height to 100% of the viewport height */
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.book-list {
   display: grid;
   grid-template-columns: repeat(5, 1fr); /* Creates 5 equal-width columns */
   grid-template-rows: repeat(3, auto);   /* Creates 3 rows (height adjusts to content) */
@@ -11,11 +20,26 @@ ul {
   list-style-type: none; /* Removes the bullets */
   padding: 0;           /* Removes default indentation */
   margin: 0;            /* Adds optional spacing between items */
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-li {
+.book-list li {
   display: flex;
   justify-content: center; /* Horizontal centering */
   align-items: center;     /* Vertical centering */
   text-align: center;      /* Centers inline text */
+}
+
+.book-list img {
+    width: calc((100vw - 1000px) / 10);
+    height: auto;
+}
+
+.book-list button {
+  all: unset;
+  cursor: pointer; /* Recommended to keep interactivity obvious */
 }

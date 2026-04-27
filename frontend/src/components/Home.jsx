@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Home.css'
+import library from '../assets/library.png';
 
 const bookData = [
     {
@@ -146,17 +147,18 @@ const Home = () => {
 
     return (
         <main>
-            <h1>The Little Internet Library</h1>
-
-            <ul>
-                {books.map((book) => (
-                    <li key={book.id}>
-                        <button onClick={() => navigate(`/Books/${book.id}`)}>
-                            <img src={book.image} alt={book.title} />
-                        </button>
-                    </li>
-                ))}
-            </ul>
+            <div className="container">
+                <img src={library} alt="Library" />
+                <ul className="book-list">
+                    {books.map((book) => (
+                        <li key={book.id}>
+                            <button onClick={() => navigate(`/books/${book.id}`)}>
+                                <img src={book.image} alt={book.title} />
+                            </button>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </main>
     )
 }
