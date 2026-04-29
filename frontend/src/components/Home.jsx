@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Home.css'
 import library from '../assets/library.png';
+import axios from "axios";
 
 const bookData = [
     {
@@ -143,7 +144,23 @@ const bookData = [
 
 const Home = () => {
     const [books] = useState(bookData);
+    const [novels, setNovels] = useState([]);
     const navigate = useNavigate();
+
+    useEffect(() => {
+    // Function to fetch todos
+    const fetchNovels = async () => {
+        try {
+            const response = await axios.get("http://localhost:8000/books");
+            setNovels(response.data); // Update the novels state with fetched data
+            console.log(novels);
+        } catch (error) {
+            console.error("There was an error fetching the novels:", error);
+        }
+    };
+
+    fetchNovels();
+    }, []);
 
     return (
         <main>
