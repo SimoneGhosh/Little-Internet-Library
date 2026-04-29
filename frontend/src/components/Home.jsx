@@ -14,7 +14,6 @@ const Home = () => {
         try {
             const response = await axios.get("http://localhost:8000/books");
             setBooks(response.data.books); // Update the books state with fetched data
-            console.log(books);
         } catch (error) {
             console.error("There was an error fetching the books:", error);
         }
@@ -23,6 +22,11 @@ const Home = () => {
     fetchBooks();
     }, []);
 
+    // Log books whenever it changes
+    useEffect(() => {
+        console.log(books);
+    }, [books]);
+    
     return (
         <main>
             <div className="container">
