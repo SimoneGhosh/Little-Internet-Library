@@ -1,5 +1,6 @@
 import { ErrorBoundary } from "react-error-boundary";
 import { useActionState } from "react";
+import { useNavigate } from 'react-router-dom';
 import './Swap.css';
 
 export default function Swap() {
@@ -16,6 +17,7 @@ export default function Swap() {
   }
 
   const [bookDetails, swapAction] = useActionState(bookSwap, null);
+  const navigate = useNavigate();
   return (
     <div className="swap-page">
       <h1>Book Swap</h1>
@@ -32,7 +34,7 @@ export default function Swap() {
           <label htmlFor="notes">Notes: </label>
           <input name="notes" id="notes" placeholder="Leave a message for the next person :)" />
 
-          <button type="submit">Trade Now!</button>
+          <button type="submit" onClick={() => navigate(`/`)}>Trade Now!</button>
           {!!bookDetails && <p>{bookDetails}</p>}
         </form>
       </ErrorBoundary>
