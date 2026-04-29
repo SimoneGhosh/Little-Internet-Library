@@ -143,8 +143,7 @@ const bookData = [
     ];
 
 const Home = () => {
-    const [books] = useState(bookData);
-    const [novels, setNovels] = useState([]);
+    const [books, setBooks] = useState([]);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -152,10 +151,10 @@ const Home = () => {
     const fetchNovels = async () => {
         try {
             const response = await axios.get("http://localhost:8000/books");
-            setNovels(response.data); // Update the novels state with fetched data
-            console.log(novels);
+            setBooks(response.data.books); // Update the novels state with fetched data
+            console.log(books);
         } catch (error) {
-            console.error("There was an error fetching the novels:", error);
+            console.error("There was an error fetching the books:", error);
         }
     };
 
