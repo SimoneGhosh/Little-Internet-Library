@@ -1,0 +1,99 @@
+
+/* Page wrapper */
+.swap-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Title */
+.swap-page h1 {
+  font-size: 3.5rem;
+  letter-spacing: 1px;
+  transform: rotate(-1deg); /* slightly imperfect */
+}
+
+/* Form container */
+#swap-form {
+  background: #fffdf8;
+  padding: 2rem;
+  width: 320px;
+
+  /* Sketchy border effect */
+  border: 3px solid #2b1d1d;
+  border-radius: 20px;
+  box-shadow: 
+    3px 3px 0px #2b1d1d,
+    6px 6px 0px rgba(0,0,0,0.05);
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  transform: rotate(-0.8deg); /* imperfect tilt */
+}
+
+/* Labels */
+#swap-form label {
+  font-size: 1rem;
+}
+
+/* Inputs */
+#swap-form input {
+  padding: 0.6rem;
+  border-radius: 10px;
+  border: 2px solid #2b1d1d;
+  background-color: #fff;
+
+  font-family: inherit;
+  font-size: 1rem;
+
+  /* slightly uneven look */
+  transform: rotate(0.3deg);
+}
+
+#swap-form input:nth-child(2) {
+  transform: rotate(-0.5deg);
+}
+
+#swap-form input:focus {
+  outline: none;
+  background-color: #fffbe6;
+}
+
+/* Button - playful yellow blob */
+#swap-form button {
+  margin-top: 1rem;
+  padding: 0.7rem 1.8rem;
+
+  background-color: #f4c400;
+  border: 3px solid #2b1d1d;
+
+  border-radius: 999px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-family: inherit;
+
+  cursor: pointer;
+
+  /* hand-drawn feel */
+  box-shadow: 2px 2px 0px #2b1d1d;
+  transform: rotate(-1deg);
+
+  transition: all 0.15s ease;
+}
+
+/* Hover = “pressing a sticker” */
+#swap-form button:hover {
+  transform: rotate(1deg) scale(1.05);
+  background-color: #ffd84d;
+  box-shadow: 4px 4px 0px #2b1d1d;
+}
+
+/* Error / message text */
+#swap-form p {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
