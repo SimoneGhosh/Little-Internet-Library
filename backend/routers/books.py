@@ -33,7 +33,7 @@ async def get_total_books_traded():
 @router.get("/{book_id}")
 async def get_book(book_id: int, db: Session = Depends(get_db), status_code=status.HTTP_200_OK):
     try:
-        book = db.query(models.Books).filter(models.Book.id == book_id).first()
+        book = db.query(models.Books).filter(models.Books.id == book_id).first()
         if book:
             return {"book": book}
         else:
